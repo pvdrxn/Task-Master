@@ -29,5 +29,5 @@
 1. Clona el repositorio:
 
 ```bash
-git clone https://github.com/tu-usuario/task-master.git
+git clone https://github.com/pvdrxn/task-master.git
 cd task-master
