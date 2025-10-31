@@ -1,0 +1,135 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #111111;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    background-color: #111111;
+    padding: 2rem;
+    max-width: 400px;
+    width: 100%;
+}
+
+h2 {
+    margin-bottom: 3.0rem;
+    text-align: center;
+    color: whitesmoke;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    border-radius: 4px;
+    padding: 0.75rem;
+    background-color: #1a1a1a;
+    border: none;
+    transition: transform 0.3s;
+    color: whitesmoke;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    transform: scale(1);
+    text-align: center;
+}
+
+.form-control:-webkit-autofill,
+.form-control:-webkit-autofill:hover,
+.form-control:-webkit-autofill:focus,
+.form-control:-webkit-autofill:active {
+  background-color: inherit !important;
+  box-shadow: 0 0 0px 1000px inherit inset !important;
+  color: inherit !important;
+  transition: background-color 0s ease-in-out 0s;
+}
+
+
+.form-control:active {
+    border-color: #a3a3a3;
+    color: whitesmoke;
+}
+
+.form-control:hover, .form-control:focus {
+    transform: scale(1.05);
+    background-color: #252525;
+    border: none;
+    box-shadow: 0 0 5px #a3a3a300;
+    color: whitesmoke;
+    outline: none; 
+}
+
+.login-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.register-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.login-btn, 
+.register-btn {
+    padding: 0.50rem;
+    background-color: #1a1a1a;
+    color: whitesmoke;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    transform: scale(1);
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.login-btn:hover,
+.register-btn:hover,
+.login-btn:focus,
+.register-btn:focus {
+    background-color: whitesmoke;
+    color: #111111;
+    transform: scale(1.05);
+    outline: none;
+}
+
+.register-text, .login-text {
+    padding-top: 75px;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+}
+
+.register-link,
+.login-link {
+    margin-left: 5px;
+}
+
+.messages-container {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin-top: 1rem;
+    margin-left: 3.5rem;
+}
+
+.messages {
+    padding: 10px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+
+.messages li {
+    margin-bottom: 15px;
+    margin-right: 45px;
+    list-style: none;
+    padding: 0;
+    color: #c50f21;
+    text-align: center;
+}

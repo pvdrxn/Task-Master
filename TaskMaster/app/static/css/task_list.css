@@ -1,0 +1,222 @@
+body {
+    background-color: #111111;
+    font-family: 'Roboto', sans-serif;
+    display: flex
+}
+
+.container {
+    margin-left: 270px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.mt-4 {
+    padding-top: 50px;
+}
+
+.task-list-title {
+    color: whitesmoke;
+    text-align: center;
+}
+
+.pending-title {
+    color: whitesmoke;
+    text-align: center;
+}
+
+.task-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 15px;
+    border-bottom: 1px solid;
+    min-width: 100%;
+    background-color: #d2d2d2;
+    border-radius: 4px;
+    border: none;
+    transition: transform 0.3s;
+    z-index: 100;
+}
+
+.all, .expired, .completed, .pending{
+    transition: 0.3s;
+}
+
+.all:hover{
+    background-color: whitesmoke;
+}
+
+.expired{
+    background-color: #e43b3b;
+}
+
+.expired:hover{
+    background-color: #e22626
+}
+
+.completed{
+    background-color: #7fe03e;
+}
+
+.completed:hover{
+    background-color: #70e025;
+}
+
+.pending {
+    background-color: rgb(80, 194, 229);
+}
+
+.pending:hover {
+    background-color: rgb(39, 186, 231);
+}
+
+.task-item:hover, .task-item:active {
+    transform: scale(1.05);
+}
+
+.task-title {
+    font-size: 25px;
+    color: black;
+    font-weight: 500;
+}
+
+.list-group-item {
+    background-color: #11111100;
+    border: none;
+}
+
+.checkbox {
+    width: 25px; 
+    height: 25px; 
+    margin: 5px 10px 0px 5px; 
+}
+
+.description {
+    margin-top: 20px;
+    color: #111111;
+}
+
+.due-date {
+    font-weight: 650;
+    font-size: 16px;
+    color: rgb(75, 0, 0);
+}
+
+.expired-date {
+    font-weight: 650;
+    font-size: 16px;
+    color: rgb(32, 0, 0);
+}
+
+.created-at {
+    color: #111111;
+}
+
+.task-item .edit-link,
+.task-item .delete-link,
+.add-link {
+    position: absolute;
+    font-size: 20px;
+    transform: scale(1.25);
+    background-color: transparent;
+    border: none; 
+    color: black; 
+    border-radius: 50%; 
+    outline: none;
+    z-index: 102;
+}
+
+.task-item .edit-link {
+    margin-right: 50px;
+}
+
+.confirmation-delete{
+    width: 8px;
+    height: 8px;
+    pointer-events: none;
+    user-select: none;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    position: relative;
+    border: none;
+    border-radius: 5px;
+    background-color: #d2d2d200;
+    color: #fd010100;
+    z-index: -10;
+    left: 0px;
+    transition: left 0.3s ease 0.2s, background-color 0.2s ease-in-out, height 0.3s ease, width 0.3s ease;
+}
+  
+.confirmation-delete.active {
+    height: 30px;
+    width: 90px;
+    pointer-events: all;
+    left: 120px;
+    background-color: rgb(75, 0, 0);
+    color: #d2d2d2;
+    z-index: -10;
+    transition: left 0.3s ease, background-color 0.5s ease-in-out, height 0.3s ease 0.2s, width 0.3s ease 0.2s, color 0.3s ease 0.3s;
+}
+
+.confirmation-delete.active:hover{
+    transform: scale(1.0);
+}
+
+.confirmation-delete.pending
+.task-item form {
+    width: 100%;
+}
+
+.task-actions {
+    display: flex;
+    justify-content: flex-end; 
+    flex-grow: 1;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 5s forwards; 
+    height: 80px; 
+    display: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px; 
+}
+
+.add-icon {
+    color: white;
+    background-color: #111111;
+    position: fixed;
+    margin-left: 1%;
+    width: 5rem;
+    height: 5rem;
+    bottom: 20px;
+    right: 20px;     
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    z-index: 1001;
+}
+
+.add-icon:hover {
+    transform: scale(1.15) rotate(180deg);
+    background-color: rgb(221, 187, 34);
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 0 10px rgb(48, 40, 11);
+}
+
+.bi-plus{
+    font-size: 45px;
+}

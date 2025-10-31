@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.4.1/font/bootstrap-icons.min.css">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/appbar.css' %}">
+
+    <title>Home</title>
+</head>
+<body>
+
+    <div class="appbar">
+        <a class="title" href="{% url 'home' %}">Task Master</a>
+        <a class="bi bi-box-arrow-left" data-toggle="modal" data-target="#logoutModal"></a>
+    </div>
+
+    <div class="parent">
+
+        <div class="container A">
+            <a href="{% url 'all_tasks' %}" class="block-link">
+                <div class="tasks all">
+                    <h1>Todas</h1>
+                    <div>
+                        <h3>Cantidad: {{ total }}</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'pending_tasks' %}" class="block-link">
+                <div class="tasks pending">
+                    <h1>Pendientes</h1>
+                    <h3>Cantidad: {{ pendientes }}</h3>
+                </div>
+            </a>
+        </div>
+
+        <a href="{% url 'task_create' %}" class="add-icon">
+            <i class="bi bi-plus"></i>
+        </a>
+
+        <div class="container B">
+            <a href="{% url 'completed_tasks' %}" class="block-link">
+                <div class="tasks completed">
+                    <h1>Completadas</h1>
+                    <h3>Cantidad: {{ completadas }}</h3>
+                </div>
+            </a>
+            <a href="{% url 'expired_tasks' %}" class="block-link">
+                <div class="tasks expired">
+                    <h1>Expiradas</h1>
+                    <h3>Cantidad: {{ expiradas }}</h3>
+                </div>
+            </a>
+        </div>   
+
+    <!-- Modal para cerrar sesión -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logoutModalLabel">Confirmar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ¿Seguro que desea cerrar sesión?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <a href="{% url 'logout' %}" class="btn btn-danger">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</html>

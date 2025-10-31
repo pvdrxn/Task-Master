@@ -1,0 +1,131 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #111111;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    background-color: #111111;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: whitesmoke;
+    margin-bottom: 60px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    border-radius: 4px;
+    padding: 0.75rem;
+    background-color: #1a1a1a;
+    border: none;
+    transition: transform 0.3s;
+    color: whitesmoke;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    transform: scale(1);
+}
+
+.form-control:hover, .form-control:focus{
+    transform: scale(1.05);
+    background-color: #252525;
+    border: none;
+    box-shadow: 0 0 5px #a3a3a300;
+    color: whitesmoke;
+}
+
+.form-control:active {
+    border-color: #a3a3a3;
+    color: whitesmoke;
+}
+
+.title {
+    text-align: center;
+    font-size: 28px;
+    color: whitesmoke;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-action {
+    flex: 1; /* Hace que los botones ocupen el mismo espacio */
+    max-width: 150px;
+    text-align: center;
+    font-weight: 500;
+    background-color: #a3a3a300;
+    color: whitesmoke;
+    transition: background-color 0.5s;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: none;
+}
+
+.btn-action:focus{
+    outline: none
+}
+
+.btn-action:hover {
+    transform: (1.05);
+    color: #111111;
+    text-decoration: none;
+}
+
+.save{
+    background-color: #7fe03e0f;
+}
+
+.save:hover{
+ background-color: #7fe03e;
+}
+
+.cancel{
+    background-color: #dd44440f;
+}
+
+.cancel:hover{
+ background-color: #e43b3b;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+label {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+input, textarea {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.datetime {
+  -webkit-user-select: none; /* Safari/Chrome */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE/Edge */
+  user-select: none;
+}

@@ -1,0 +1,139 @@
+.sidebar {
+    display: flex;
+    width: 220px;
+    height: 100vh;
+    position: fixed;
+    left: -220px;
+    top: 0;
+    background-color: whitesmoke;
+    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-title {
+    width: 300px;
+    height: 5px;
+    color: #1d1d1d;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 180px;
+    transition: 0.3s;
+}
+
+.toggle-btn {
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    background-color: #00000000;
+    color: whitesmoke;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+.toggle-btn.white {
+  color: whitesmoke;
+}
+
+.toggle-btn.black {
+  color: #1d1d1d;
+}
+
+.toggle-btn:hover {
+    outline: none;
+    font-size: 35px;
+}
+
+.toggle-btn:focus {
+    outline: none;
+}
+
+.toggle-btn:active{
+    outline: none;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 35px 0 0 0;
+    width: 100%;
+    font-size: 25px;
+}
+
+.nav-links li{
+    color: #1d1d1d;
+    height: 40px;
+    transition: 0.3s;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.btn-all:hover {
+    background-color: #d2d2d2;
+    border-radius: 5px;
+}
+
+.btn-expired:hover {
+    background-color: #e43b3b;
+    border-radius: 5px;
+}
+
+.btn-completed:hover {
+    background-color: #7fe03e;
+    border-radius: 5px;
+}
+
+.btn-pending:hover{
+    background-color: rgb(80, 194, 229);
+    border-radius: 5px;
+}
+
+.btn-home:hover {
+    background-color: rgb(221, 187, 34);
+    border-radius: 5px;
+}
+
+.nav-links a {
+    color: #1d1d1d;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    transition: 0.3s;
+    color: #1d1d1d;
+    font-size: 23px;
+}
+
+.nav-links a i {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.logout-button {
+    color: #1d1d1d;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: auto;
+    height: 40px;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.logout-button:hover {
+    transition: 0.3s;
+    font-size: 23px;
+}

@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.4.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{% static 'css/settings.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+</head>
+<body>
+
+    <button class="toggle-btn" onclick="toggleSidebar()"><i class="bi bi-list"></i></button>
+
+    <div class="sidebar">
+        <p class="sidebar-title">Task Master</p>
+        <ul class="nav-links">
+            <li><a class="btn-all" href="{% url 'all_tasks' %}"><i class="bi bi-card-checklist"></i>Todas</a></li>
+            <li><a class="btn-pending" href="{% url 'pending_tasks' %}"><i class="bi bi-hourglass-split"></i>Pendientes</a></li>
+            <li><a class="btn-expired" href="{% url 'expired_tasks' %}"><i class="bi bi-exclamation-circle"></i>Vencidas</a></li>
+            <li><a class="btn-completed" href="{% url 'completed_tasks' %}"><i class="bi bi-check-circle"></i>Completadas</a></li>
+            <li><a class="btn-config" href="{% url 'settings' %}"><i class="bi bi-gear"></i>Configuración</a></li>
+        </ul>
+        <div class="logout-button" data-toggle="modal" data-target="#logoutModal">
+            <i class="bi"></i> Cerrar sesión
+        </div>
+    </div>
+
+    <!--toggle sidebar function-->
+    <script>
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        }
+    </script>
+
+    <div class="settings-wrapper">
+        <!-- Profile Info Section -->
+        <div class="profile-box">
+            <div class="profile-picture">
+                <img src="path/to/profile.jpg" alt="Foto de Perfil">
+            </div>
+            <div class="profile-details">
+                <h2>Juan Manuel</h2>
+                <p><strong>Correo:</strong> juan@example.com</p>
+                <p><strong>Tareas:</strong> 12</p>
+                <p><strong>Completadas:</strong> 4</p>
+                <p><strong>Pendientes:</strong> 5</p>
+                <p><strong>Vencidas:</strong> 3</p>
+                <p><strong>Miembro desde:</strong> 09/06/2023</p>
+            </div>
+        </div>
+
+        <!-- Settings Section -->
+        <div class="settings-box">
+            <h3>Ajustes de Cuenta</h3>
+            <form method="POST" action="">
+                {% csrf_token %}
+                <label for="change_username">Cambiar Nombre de usuario</label>
+                <div class="form-group">
+                    <input type="text" name="username" id="change_username" class="form-control" placeholder="Nuevo nombre de usuario" required>
+                    <button type="submit" name="action" value="change_username" class="bi bi-arrow-right"></button>
+                </div>
+                
+                <label for="change_username">Cambiar contraseña</label>
+                <div class="form-group">
+                    <input type="text" name="password" id="change_password" class="form-control" placeholder="Nueva Contraseña" required>
+                    <button type="submit" name="action" value="change_password" class="bi bi-arrow-right"></button>
+                </div>
+                
+                <div class="bottom-buttons">
+                    <button class="setting-btn">Añadir Correo</button>
+                    <button class="setting-btn">Autenticación en 2 Pasos</button>
+                    <button class="delete-btn">Eliminar Cuenta</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para cerrar sesión -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logoutModalLabel">Confirmar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ¿Seguro que desea cerrar sesión?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <a href="{% url 'logout' %}" class="btn btn-danger">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
