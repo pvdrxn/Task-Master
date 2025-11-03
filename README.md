@@ -26,7 +26,7 @@
 
 ## 📦 Instalación local
 
-1. Clona el repositorio:
+Clona el repositorio:
 
 ```bash
 git clone https://github.com/pvdrxn/task-master.git
